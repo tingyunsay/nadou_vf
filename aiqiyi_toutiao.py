@@ -28,7 +28,7 @@ def split_param(param):
         res+= k+"="+str(v)+"&"
     return res
 
-#纳豆播放页面的vf算法,调用js代码得出
+#纳豆播放页面的vf算法
 def get_vf(tvid,vid,t):
     a = tvid
     b = vid
@@ -51,10 +51,9 @@ def get_vf(tvid,vid,t):
         "t":t,
         "src":"02020031010000000000",
         "callback":"tmtsCallback"
-
     }
     print split_param(c)
-    src = "/jp/tmts/" + a + "/" + b + "/?" + split_param(c) + "&callback=tmtsCallback";
+    src = "/jp/tmts/" + a + "/" + b + "/?" + split_param(c)
     vf =  cmd5x(src)
     return src,vf
 
